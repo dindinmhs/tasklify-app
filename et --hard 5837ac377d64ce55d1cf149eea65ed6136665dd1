@@ -1,0 +1,35 @@
+[33mcommit 7556d6fe37fc7bf0cf8a41236f010f7db9027a4b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Thu Jun 13 20:02:44 2024 +0700
+
+    Remove .env file and add to .gitignore
+
+[33mcommit 0be289f0ccb346c61fdfc90b2dd2dd00895a7ebf[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Thu Jun 13 19:51:28 2024 +0700
+
+    sign in google
+
+[33mcommit f3f6c00c8ded7156163a620e6ec8d7f886e3da40[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Sun May 5 23:01:59 2024 +0700
+
+    hash password dan responsive
+
+[33mcommit 873e64cb2f1c953d5fcb831039c67befc42bd249[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Wed May 1 00:47:24 2024 +0700
+
+    style login dan sign up
+
+[33mcommit cbb1041ffb3e61fd47f0b7bf4c8cdc312448c09c[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Tue Apr 9 17:43:24 2024 +0700
+
+    back-end form selesai dan auth hampir selesai
+
+[33mcommit a6c82fbab452a81c230a17be96f8751db78febb1[m
+Author: Dindin Imanudin <dindin.imanudin@mhs.itenas.ac.id>
+Date:   Mon Apr 8 13:49:17 2024 +0700
+
+    bikin baru sudah auth
