@@ -40,7 +40,7 @@ export function Form({head, content}) {
         // menangani sign in
         if (head === 'Sign in') {
             // check benar
-            const res = await fetch('api/signin', {
+            const res = await fetch('https://tasklify-omega.vercel.app/api/signin', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'
@@ -72,7 +72,7 @@ export function Form({head, content}) {
             // menangani sign up
             try {
                 // cek user exist
-                const res =  await fetch('api/userexist', {
+                const res =  await fetch('https://tasklify-omega.vercel.app/api/userexist', {
                         method : 'POST',
                         headers : {
                             'Content-Type' : 'aplication/json'
@@ -86,7 +86,7 @@ export function Form({head, content}) {
                     setInfo('User already exist')
                     return
                 } else {
-                    const res = await fetch('api/signup', {
+                    const res = await fetch('https://tasklify-omega.vercel.app/api/signup', {
                         method : 'POST',
                         headers : {
                             'Content-Type' : 'aplication/json'
@@ -119,9 +119,8 @@ export function Form({head, content}) {
                 <h2 className='text-3xl my-10 text-center'>{`${head} to Tasklify`}</h2>
                 {content.map(el => (
                     <div className='relative my-4' key={el.id}>
-                        {/* <label htmlFor={el.id}>{el.name}</label><br/> */}
-                        <input disabled={isPending} className='disabled:bg-white border-2 border-solid border-black rounded-full px-4 py-1 w-full placeholder-black outline-none' name={el.id} onChange={handleChange} placeholder={el.name} id={el.id} type={el.type}/>
-                        <div className='bg-black top-0 right-0 left-0 bottom-0 -z-10 absolute rounded-full -translate-x-1 translate-y-1'></div>
+                        <div className='bg-black rounded-full -translate-x-1 translate-y-1 py-1 px-4 w-full'>el.name</div>
+                        <input disabled={isPending} className='disabled:bg-white border-2 py-1 px-4 border-solid border-black rounded-full placeholder-black outline-none top-0 right-0 left-0 bottom-0 absolute' name={el.id} onChange={handleChange} placeholder={el.name} id={el.id} type={el.type}/>
                     </div>
                 ))}
                 <p className='text-sm mb-4'>{info}</p>

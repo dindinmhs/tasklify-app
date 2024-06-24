@@ -22,8 +22,8 @@ export function New({user}) {
         else {
             status = 'In Progress'
         }
-        const newData = {user_id : user._id, ...data, date, status : status, completed : false}
-        await fetch('http://localhost:3000/api/insertTask', {
+        const newData = {user_id : user._id, ...data, date, status : status}
+        await fetch('https://tasklify-omega.vercel.app/insertTask', {
             method : 'POST',
             headers : {
                 'Content-Type' : 'aplication/json'

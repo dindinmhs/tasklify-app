@@ -7,11 +7,16 @@ export async function POST(req) {
     try {
         const db = await connectDB()
         const coll = db.collection('task')
+        if (!data._id) {
+            return NextResponse.json({ error: 'No _id provided' }, { status: 400 });
+        }
         const id = new ObjectId(data._id);
-        console.log(id);
-        const result = await coll.deleteOne(data);
-        console.log('Delete result:', result);
-        return NextResponse.json({status : 200})
+        const result = await coll.deleteOne({_id : id});
+        if (result.deletedCount === 1) {``
+            return NextResponse.json({ status: 200 });
+        } else {
+            return NextResponse.json({ error: 'No document found to delete' }, { status: 404 });
+        }
     } catch (error) {
         console.log('failed fetching',error)
         return NextResponse.json({ error: 'failed fetch' }, { status: 500 })

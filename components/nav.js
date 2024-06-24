@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export function Nav() {
     const session = useSession()
     function handleClick() {
-        signOut({callbackUrl:'http://localhost:3000/signup'})
+        signOut({callbackUrl:'https://tasklify-omega.vercel.app/signup'})
     }
     return (
         <nav className="duration-1000 group/nav w-fit h-screen w-50 border-solid items-center border-black border-r-4 p-4 flex flex-col overflow-x-hidden">
@@ -20,7 +20,7 @@ export function Nav() {
                     width={0}
                     height={0}
                     alt="logo tasklify"
-                    priority={false}
+                    priority={true}
                     className="m-auto w-[40px] h-auto"
                 />
             </Link>
@@ -51,11 +51,11 @@ export function Nav() {
             <Link href="/dashboard/profile" className="group hover:bg-black py-3 px-4 rounded mt-4">
                 <div className="flex items-center">
                     <Image
-                        src={session?.data?.user?.image}
+                        src={session?.data?.user?.image||'/profile-default.svg'}
                         width={50}
                         height={50}
                         alt="profile"
-                        priority={false}
+                        priority={true}
                         className="rounded-full border-black border-4 border-solid"
                     />
                     <div className="text-lg group-hover:text-white w-0 opacity-0 group-hover/nav:ml-2 group-hover/nav:opacity-100 group-hover/nav:w-24 inline duration-500 truncate">{session?.data?.user?.name}</div>

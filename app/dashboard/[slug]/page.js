@@ -24,7 +24,7 @@ export default function Home() {
   async function fetchData() {
     if (session?.data?.user) {
       // fetch user
-      const res = await fetch('http://localhost:3000/api/getdata', {
+      const res = await fetch('https://tasklify-omega.vercel.app/api/getdata', {
         method : 'POST',
         headers : {
             'Content-Type' : 'aplication/json'
@@ -40,18 +40,20 @@ export default function Home() {
     }
   }
   async function fetchTask() {
-    const res = await fetch('http://localhost:3000/api/getTask', {
-      method : 'POST',
-      headers : {
-          'Content-Type' : 'aplication/json'
-      },
-      body : JSON.stringify({user_id : data?._id})
-    })
-    if (res.ok) {
-      const task = await res.json();
-      setTask(task)
-    } else {
-      console.error('Failed to fetch data');
+    if (data) {
+      const res = await fetch('https://tasklify-omega.vercel.app/api/getTask', {
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'aplication/json'
+        },
+        body : JSON.stringify({user_id : data?._id})
+      })
+      if (res.ok) {
+        const task = await res.json();
+        setTask(task)
+      } else {
+        console.error('Failed to fetch data');
+      }
     }
   }
   useEffect(()=>{

@@ -5,7 +5,7 @@ export function Task({tasks}) {
     const [open, isOpen] = useState(false)
     async function completeTask(id) {
         try {
-            const res = await fetch('http://localhost:3000/api/completeTask', {
+            const res = await fetch('https://tasklify-omega.vercel.app/api/completeTask', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'
@@ -24,7 +24,7 @@ export function Task({tasks}) {
 
     async function deleteTask(id) {
         try {
-            const res = await fetch('http://localhost:3000/api/deleteTask', {
+            const res = await fetch('https://tasklify-omega.vercel.app/api/deleteTask', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'
@@ -72,7 +72,7 @@ export function Task({tasks}) {
                             <button>
                                 <FaPenToSquare className="text-amber-500"/>
                             </button>
-                            <button onClick={()=>deleteTask(e.id)}>
+                            <button onClick={()=>deleteTask(e._id)}>
                                 <FaTrash className="text-rose-500"/>
                             </button>
                             <button onClick={()=>completeTask(e._id)}>

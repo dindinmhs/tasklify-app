@@ -46,7 +46,7 @@ export const authOptions = {
       }
       try {
         if (account.provider == 'google') {
-          await fetch('http://localhost:3000/api/google', {
+          await fetch('https://tasklify-omega.vercel.app/api/google', {
             method : 'POST',
             headers : {
                 'Content-Type' : 'aplication/json'
