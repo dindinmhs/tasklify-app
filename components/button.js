@@ -4,8 +4,6 @@ export function Button({type, bgColor, name, isPending, px}) {
     function handleClick(name) {
         if (name == 'Google' && type == 'button') {
             signIn("google",{callbackUrl:'/dashboard/overview'})
-        } else {
-            console.log('tes')
         }
     }
     return(

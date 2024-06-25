@@ -8,6 +8,15 @@ const nextConfig = {
                 pathname: '/**',
             }
         ]
+    },
+    async redirects() {
+        return [
+            {
+                source: '/dashboard',
+                destination: '/overview',
+                permanent: true,
+            }
+        ]
     }
 };
 

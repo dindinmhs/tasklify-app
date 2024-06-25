@@ -43,6 +43,7 @@ export const authOptions = {
         _id : user.id,
         name : user.name,
         email : user.email,
+        provider : 'google'
       }
       try {
         if (account.provider == 'google') {

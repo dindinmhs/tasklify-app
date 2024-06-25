@@ -4,13 +4,15 @@ import { NextResponse } from 'next/server'
 export async function POST(req) {
     const data = await req.json()
     try {
+        console.log(data)
         const db = await connectDB()
         const coll = db.collection('user')
-        const exist = coll.findOne({_id : data.id})
+        const exist = await coll.findOne({_id : data.id})
+        console.log(exist)
         if (exist) {
             return NextResponse.json({massage : 'Sign Up'}, {status : 201})
         } else {
-            coll.insertOne(data)
+            await coll.insertOne(data)
             return NextResponse.json({massage : 'account created'}, {status : 201})
         }
     } catch (error) {

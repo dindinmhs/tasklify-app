@@ -20,7 +20,7 @@ export function Form({head, content}) {
     function handleChange(event) {
         const name = event.target.name
         const value = event.target.value
-        setData(values => ({...values, [name] : value}))
+        setData(values => ({...values, [name] : value, provider : 'credentials'}))
     }
     // menangani submit
     async function handleSubmit(e) {
