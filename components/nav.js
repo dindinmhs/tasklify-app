@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export function Nav() {
     const session = useSession()
     function handleClick() {
-        signOut({callbackUrl:'https://tasklify-omega.vercel.app/signup'})
+        signOut({callbackUrl:'/signup'})
     }
     return (
         <nav className="duration-1000 group/nav w-fit h-screen w-50 border-solid items-center border-black border-r-4 p-4 flex flex-col overflow-x-hidden">
