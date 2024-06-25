@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react"
 import { FaCalendarDays, FaInfo, FaPenToSquare, FaTrash, FaCheck } from "react-icons/fa6"
 export function Task({tasks}) {
@@ -5,7 +6,7 @@ export function Task({tasks}) {
     const [open, isOpen] = useState(false)
     async function completeTask(id) {
         try {
-            const res = await fetch('https://tasklify-omega.vercel.app/api/completeTask', {
+            const res = await fetch('/api/completeTask', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'
@@ -24,7 +25,7 @@ export function Task({tasks}) {
 
     async function deleteTask(id) {
         try {
-            const res = await fetch('https://tasklify-omega.vercel.app/api/deleteTask', {
+            const res = await fetch('/api/deleteTask', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'

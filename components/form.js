@@ -40,7 +40,7 @@ export function Form({head, content}) {
         // menangani sign in
         if (head === 'Sign in') {
             // check benar
-            const res = await fetch('api/signin', {
+            const res = await fetch('/api/signin', {
                 method : 'POST',
                 headers : {
                     'Content-Type' : 'aplication/json'
@@ -72,7 +72,7 @@ export function Form({head, content}) {
             // menangani sign up
             try {
                 // cek user exist
-                const res =  await fetch('api/userexist', {
+                const res =  await fetch('/api/userexist', {
                         method : 'POST',
                         headers : {
                             'Content-Type' : 'aplication/json'
@@ -86,7 +86,7 @@ export function Form({head, content}) {
                     setInfo('User already exist')
                     return
                 } else {
-                    const res = await fetch('api/signup', {
+                    const res = await fetch('/api/signup', {
                         method : 'POST',
                         headers : {
                             'Content-Type' : 'aplication/json'

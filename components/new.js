@@ -1,3 +1,4 @@
+'use client'
 import {DateRangePicker} from "@nextui-org/date-picker"
 import { Button } from "./button"
 import { useState } from "react"
@@ -23,7 +24,7 @@ export function New({user}) {
             status = 'In Progress'
         }
         const newData = {user_id : user._id, ...data, date, status : status}
-        await fetch('https://tasklify-omega.vercel.app/api/insertTask', {
+        await fetch('/api/insertTask', {
             method : 'POST',
             headers : {
                 'Content-Type' : 'aplication/json'

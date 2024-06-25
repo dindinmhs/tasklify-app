@@ -24,7 +24,7 @@ export default function Home() {
   async function fetchData() {
     if (session?.data?.user) {
       // fetch user
-      const res = await fetch('https://tasklify-omega.vercel.app/api/getdata', {
+      const res = await fetch('/api/getdata', {
         method : 'POST',
         headers : {
             'Content-Type' : 'aplication/json'
@@ -41,7 +41,7 @@ export default function Home() {
   }
   async function fetchTask() {
     if (data) {
-      const res = await fetch('https://tasklify-omega.vercel.app/api/getTask', {
+      const res = await fetch('/api/getTask', {
         method : 'POST',
         headers : {
             'Content-Type' : 'aplication/json'
@@ -74,9 +74,6 @@ export default function Home() {
         return <Task tasks={task}/>;
     }
   };
-  async function handleSignOut() {
-    await signOut({redirect: false})
-  }
   return (
     <div className="w-9/12 mx-auto mt-7">
       {renderContent()}
