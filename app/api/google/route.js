@@ -8,7 +8,6 @@ export async function POST(req) {
         const db = await connectDB()
         const coll = db.collection('user')
         const exist = await coll.findOne({_id : data.id})
-        console.log(exist)
         if (exist) {
             return NextResponse.json({massage : 'Sign Up'}, {status : 201})
         } else {

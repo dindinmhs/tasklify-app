@@ -8,7 +8,6 @@ export async function POST(req) {
         const db = await connectDB()
         const coll = db.collection('task')
         const filter = { _id: new ObjectId(data._id) }
-        console.log(filter)
         const update = { $set: { status: "Completed" } };
         await coll.updateOne(filter,update)
         return NextResponse.json({status : 200})
