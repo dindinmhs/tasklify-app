@@ -9,6 +9,12 @@ export async function POST(req) {
         const db = await connectDB()
         const coll = db.collection('task')
         const task = await coll.find(data).toArray()
+        const updatedTasks = task.map(task => {
+            return {
+                ...task,
+                _id: task._id.toString(),
+            };
+        });
         if (task) {
             task.forEach(async (task)=>{
                 if (task.status != 'Completed') {
@@ -19,7 +25,7 @@ export async function POST(req) {
                     }
                 }
             })
-            return NextResponse.json(task,{status : 200})
+            return NextResponse.json(updatedTasks,{status : 200})
         } else {
             return NextResponse.json({status : 500})
         }

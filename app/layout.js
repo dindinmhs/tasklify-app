@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{backgroundColor : '#F5F5F5'}} className={markoOne.className}><Providers>{children}</Providers></body>
+      <body className={markoOne.className}><Providers>{children}</Providers></body>
     </html>
   );
 }

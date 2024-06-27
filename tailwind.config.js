@@ -13,9 +13,12 @@ module.exports = {
       gridTemplateColumns : {
         "auto-fit" : 'repeat(auto-fit, minmax(300px, 1fr))'
       },
+      colors : {
+        "custom-body" : "#F5F5F5"
+      },
       screens : {
         'lc' : {'raw' : '(min-height : 500px)'}, 
-      }
+      },
     },
   },
   plugins: [nextui()],

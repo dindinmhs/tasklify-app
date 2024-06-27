@@ -33,9 +33,9 @@ export function New({user}) {
         })
     }
     return (
-        <>
-            <h1 className="text-4xl">New Task</h1>
-            <form onSubmit={()=>{handleSubmit(user)}} className="w-4/6 mt-4">
+        <div className="m-auto w-full md:w-4/5">
+            <h1 className="text-4xl m-auto">New Task</h1>
+            <form onSubmit={()=>{handleSubmit(user)}} className="mt-4">
                 <div className="border-4 overflow-hidden border-black rounded-xl px-4 py-2 bg-white">
                     <input name="title" onChange={handleChange} required placeholder="Task Name" className="border-b-4 w-full border-black text-2xl placeholder-black outline-none pb-2" type="text"/>
                     <textarea name="description" onChange={handleChange} rows="5" placeholder="Description" className="resize-none text-xl block w-full outline-none mt-2 placeholder-black"/>
@@ -64,6 +64,6 @@ export function New({user}) {
                     />
                 </div>
             </form>
-        </>
+        </div>
     )
 }

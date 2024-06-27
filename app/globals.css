@@ -9,3 +9,12 @@
   }
 }
 
+html, body {
+  @apply h-full overflow-auto;
+}
+
+body {
+  @apply bg-custom-body
+}
+
+
