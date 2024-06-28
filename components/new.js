@@ -19,8 +19,7 @@ export function New({user}) {
             status = 'Upcoming'
         } else if (now.day > date.end.day && now.month >= date.end.month && now.year >= date.end.year) {
             status = 'Unfinished'
-        } 
-        else {
+        } else if (now.day > date.start.day && now.day < date.end.day && now.month >= date.start.month && now.month <= date.end.month && now.year >= date.start.year && now.year <= date.end.year) {
             status = 'In Progress'
         }
         const newData = {user_id : user._id, ...data, date, status : status}
@@ -35,7 +34,7 @@ export function New({user}) {
     return (
         <div className="m-auto w-full md:w-4/5">
             <h1 className="text-4xl m-auto">New Task</h1>
-            <form onSubmit={()=>{handleSubmit(user)}} className="mt-4">
+            <form onSubmit={(e)=>{e.preventDefault();handleSubmit(user)}} className="mt-4">
                 <div className="border-4 overflow-hidden border-black rounded-xl px-4 py-2 bg-white">
                     <input name="title" onChange={handleChange} required placeholder="Task Name" className="border-b-4 w-full border-black text-2xl placeholder-black outline-none pb-2" type="text"/>
                     <textarea name="description" onChange={handleChange} rows="5" placeholder="Description" className="resize-none text-xl block w-full outline-none mt-2 placeholder-black"/>
@@ -47,7 +46,7 @@ export function New({user}) {
                     size="lg"
                     onChange={setDate}
                 />
-                <div className="flex gap-2 justify-end">
+                <div className="flex gap-2 justify-end mt-4">
                     <Button
                         name="Reset"
                         bgColor="bg-rose-500"

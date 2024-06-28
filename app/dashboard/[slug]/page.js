@@ -75,7 +75,7 @@ export default function Home() {
     }
   };
   return (
-    <div className="w-9/12 mx-auto mt-7">
+    <div className="px-6 w-full md:px-0 md:w-9/12 mx-auto mt-7">
       {renderContent()}
     </div>
 
