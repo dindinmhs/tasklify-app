@@ -17,11 +17,13 @@ export async function POST(req) {
         });
         if (task) {
             task.forEach(async (task)=>{
-                if (task.status != 'Completed') {
-                    if (now.day > task.date.end.day && now.month >= task.date.end.month && now.year >= task.date.end.year) {
-                        await coll.updateOne({_id : task._id},{$set : {status : "Unfinished"}})
-                    } else if (now.day > task.date.start.day && now.day < task.date.end.day && now.month > task.date.start.month && now.month < task.date.end.month && now.year > task.date.start.year && now.year < task.date.end.year) {
+                if (task.status === 'Upcoming') {
+                    if (now.month === task.date.start.month && now.year === task.date.start.year && now.day === task.date.start.day) {
                         await coll.updateOne({_id : task._id},{$set : {status : "In Progress"}})
+                    } 
+                } else if (task.status === 'In Progress') {
+                    if (now.month === task.date.end.month && now.year === task.date.end.year && now.day < task.date.end.day) {
+                        await coll.updateOne({_id : task._id},{$set : {status : "Unfinished"}})
                     }
                 }
             })

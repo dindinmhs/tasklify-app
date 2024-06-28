@@ -1,5 +1,6 @@
 import { Marko_One } from "next/font/google";
 import {Providers} from "../provider";
+import Head from "next/head"
 import './globals.css'
 
 const markoOne = Marko_One({ weight : '400', subsets : ['latin'] });
@@ -12,6 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico"/>
+      </Head>
       <body className={markoOne.className}><Providers>{children}</Providers></body>
     </html>
   );
